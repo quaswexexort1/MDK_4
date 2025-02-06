@@ -65,9 +65,7 @@ class Program
             string znakzodiaca = Console.ReadLine()!;
 
             Console.Write("Месяц рождения (1-12): ");
-            string birthday = Console.ReadLine()!;
-
-            int month = int.Parse(Console.ReadLine()!);
+            int month = Console.ReadLine();
 
             znakArray[i] = new ZNAK(familiya, name, znakzodiaca, month);
         }
