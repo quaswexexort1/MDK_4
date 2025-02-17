@@ -90,7 +90,7 @@ class Program
 
 
         // Поиск по месяцу
-        Console.Write("\n Сортировка по месяцу: ");
+        Console.Write("\n Введите месяц для сортировки по его числу:");
         int searchMonth = int.Parse(Console.ReadLine()!);
 
         // Вывод
