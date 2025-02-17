@@ -1,16 +1,18 @@
-public class ZNAK : ICloneable, IComparable 
+public class ZNAK : ICloneable, IComparable
 {
     public string Familiya { get; set; }
     public string Name { get; set; }
     public string ZnakZodiaca { get; set; }
     public int Birthday { get; set; }
+    public int IdNumber { get; set; }
 
-    public ZNAK(string familiya, string name, string znakzodiaca, int birthday)
+    public ZNAK(string familiya, string name, string znakzodiaca, int birthday, int idnumber)
     {
         Familiya = familiya;
         Name = name;
         ZnakZodiaca = znakzodiaca;
         Birthday = birthday;
+        IdNumber = idnumber;
     }
 
     public override string ToString()
@@ -21,11 +23,11 @@ public class ZNAK : ICloneable, IComparable
     // ICloneable
     public object Clone()
     {
-        return new ZNAK(Familiya, Name, ZnakZodiaca, Birthday);
+        return new ZNAK(Familiya, Name, ZnakZodiaca, Birthday, IdNumber);
     }
 
     // IComparable
-    public int CompareTo(object ?obj)
+    public int CompareTo(object? obj)
     {
         if (obj == null)
             return 1;
@@ -65,9 +67,12 @@ class Program
             string znakzodiaca = Console.ReadLine()!;
 
             Console.Write("Месяц рождения (1-12): ");
-            int month = Console.ReadLine();
+            int month = int.Parse(Console.ReadLine()!);
 
-            znakArray[i] = new ZNAK(familiya, name, znakzodiaca, month);
+            Console.Write("Идентификационный номер: ");
+            int idnumber = int.Parse(Console.ReadLine()!);
+
+            znakArray[i] = new ZNAK(familiya, name, znakzodiaca, month, idnumber);
         }
 
 
@@ -107,4 +112,3 @@ class Program
     }
 
 }
-
