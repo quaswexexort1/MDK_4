@@ -6,6 +6,7 @@ public class ZNAK : ICloneable, IComparable
     public int Birthday { get; set; }
     public int IdNumber { get; set; }
 
+    // Конструктор класса
     public ZNAK(string familiya, string name, string znakzodiaca, int birthday, int idnumber)
     {
         Familiya = familiya;
@@ -35,7 +36,7 @@ public class ZNAK : ICloneable, IComparable
         ZNAK otherZnak = obj as ZNAK;
         if (otherZnak != null)
         {
-            return ZnakZodiaca.CompareTo(otherZnak.ZnakZodiaca);
+            return ZnakZodiaca.CompareTo(otherZnak.ZnakZodiaca); // Сравниваем знаки зодиака
         }
 
         else
@@ -53,7 +54,7 @@ class Program
         int arraySize = 3;
         ZNAK[] znakArray = new ZNAK[arraySize];
 
-        for (int i = 0; i < arraySize; i++)
+        for (int i = 0; i < arraySize; i++)  // Цикл для ввода данных о каждом человеке
         {
             Console.WriteLine($"Человек: {i + 1}:");
 
